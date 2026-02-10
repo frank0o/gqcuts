@@ -1,11 +1,56 @@
 ---
+import TextImage from '../components/TextImage.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
 import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import { CONTACT_NUMBER } from '../consts';
+import ContactUs from '../components/ContactUs.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import ImageOne from '../assets/image1.jpg'
+import ImageTwo from '../assets/image2.jpg'
+import img1 from '../assets/img1.jpg'
+import img2 from '../assets/img2.jpg'
+import img3 from '../assets/img3.jpg'
+import Gallery from '../components/Gallery.astro';
+import { imageMetadata } from 'astro/assets/utils';
+import { Image } from 'astro:assets';
 ---
 
+<style>
+	
+	.content {
+		margin: 35px 5%;
+		min-height:70vh;
+	}
+
+	@media only screen and (width<=600px){
+		.partial-content {
+			font-weight:normal;
+		}
+	}
+</style>
+
+
+
 <Layout>
-	<Welcome />
+	<Header title="GQ Cut" subtitle="Best haircuts in Dickson"/>
+	<div class="content">
+
+	<TextImage altText="alt text" src={ImageOne}>
+		<h2>Store Description</h2>
+		<h4 class="partial-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h4>	
+		<ContactUs href={CONTACT_NUMBER}>Call Now</ContactUs>
+	</TextImage>
+	<Gallery title="About Us" content={[{title:"test",img:img1,text:"testing"},{title:'test2',img:img2,text:'this is a test'},{title:'more information',img:img3,text:"testing	"}]}/>
+	<TextImage src={ImageTwo}>
+		<h2>Owner Description</h2>
+		<h4 class="partial-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h4>
+	</TextImage>
+	
+	<div style="text-align: center;">
+		<ContactUs href={CONTACT_NUMBER}>Call Now</ContactUs>
+	</div>
+	</div>
+	<Footer/>
 </Layout>

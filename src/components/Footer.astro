@@ -1,0 +1,31 @@
+---
+import { ADDRESS,ADDRESS_LINK } from "../consts";
+import SocialMedia from "./SocialMedia.astro";
+const COPYRIGHT = new Date().getFullYear()
+---
+
+<style>
+  .footer {
+    box-shadow: 0 -10px 10px lightgray;
+    margin-top:60px;
+    padding:10px;
+  }
+  .footer-content {
+    margin:30px 5%;
+    text-align:center;
+  }
+
+  .addressLink {
+    color:burlywood;
+    font-weight:bold;
+    text-decoration: none;
+  }
+</style>
+
+<div class="footer">
+  <div class="footer-content">
+    <a class="addressLink" href={ADDRESS_LINK}><p>{ADDRESS}</p></a>
+    <p>Copyright © {COPYRIGHT} - All Rights Reserved.</p>
+    <SocialMedia size={32} class="footer-content"/>
+  </div>
+</div>

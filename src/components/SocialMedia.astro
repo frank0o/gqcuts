@@ -1,0 +1,26 @@
+---
+import { SITE_SOCIALS } from "../consts";
+import { Icon } from "astro-icon/components";
+const {size} = Astro.props;
+---
+<style>
+  .social-icons{
+    /* text-align: right; */
+  }
+  .social-icons a {
+    padding:5px;
+    color:black;
+    transition: .3s;
+  }
+
+  .social-icons a:hover {
+    color:rgb(0, 0, 175);
+  }
+</style>
+
+<div class="social-icons">
+    {SITE_SOCIALS.map(s=>(
+    <a href={s.url}><Icon name={`bi:${s.icon}`} size={size}/></a>
+    ))}
+    
+</div>

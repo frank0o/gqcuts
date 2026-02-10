@@ -1,0 +1,31 @@
+---
+const {href,text} = Astro.props
+---
+
+<style>
+  .contact-box {
+    background:burlywood;
+    border-radius:3px;
+    padding:10px 20px;    
+    font-size: larger;
+    font-weight:bolder;
+    display:inline-block;
+    transition:0.5s;
+  }
+
+  .contact-box:hover{
+    background:#ec9;
+  }
+
+  .contact-text {
+    text-decoration-line: none;
+    color: #eeeeee;
+    letter-spacing:0.1em;
+    text-transform: uppercase;
+  }
+
+</style>
+
+<div class="contact-box">
+  <a href={"tel:"+href} class="contact-text"><slot/></a>
+</div>

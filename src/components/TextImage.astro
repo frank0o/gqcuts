@@ -1,0 +1,78 @@
+---
+import Image from "astro/components/Image.astro";
+const {src,altText} = Astro.props;
+---
+
+<style>
+  .split{
+    display:flex;
+    padding: 50px 0;
+    justify-content:space-around;
+  }
+
+  .image {
+    max-width:40vw;
+    height:auto;
+  }
+  .split-half {
+    
+    max-width:50%;
+    flex-basis:40%;
+    display:flex;
+    align-items: center;
+  }
+  .image-border {
+   box-shadow:0 0 10px darkgray;
+   margin:10px;
+   padding:10px; 
+  }
+  .content-div {
+    
+  }
+
+  
+
+  @media only screen and (width<=700px) {
+  
+    .image {
+      max-width:70vw;
+    }
+
+    .image-border {
+      padding:0px;
+      margin:0px;
+      width:80%;
+      height:100%;
+
+    }
+
+    .split-half {
+      max-width:none;
+    }
+
+    .image-div {
+      text-align:center;
+      width:100%;
+    }
+    
+    .split {
+
+      display:block;
+    }
+    
+  }
+</style>
+
+<div class="split">
+  <div class="split-half">
+    <div class="image-div">
+    <Image class="image-border image" alt={"altText"} src={src} />
+    </div>
+  </div>
+  <div class="split-half">
+    <div class="content-div">
+    <slot/>
+    </div>
+  </div>
+
+</div>

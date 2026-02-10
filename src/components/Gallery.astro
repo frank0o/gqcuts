@@ -1,0 +1,64 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+  title:string,
+  content:Array<{img:ImageMetadata,title:string,text:string}>
+}
+
+const {title,content} = Astro.props;
+---
+
+<style>
+
+  .title {
+	}
+  .content {
+    display:flex;
+  }
+  
+  .container {
+    margin: 10px 30px;
+    text-align:center;
+  }
+
+  .item{
+    margin: 0 20px;
+    width:calc(100%/{content.length});
+  }
+
+  .galleryImage {
+    width:100%;
+    height:auto;
+    border-radius:5px;
+  }
+
+  @media only screen and (width<=600px){
+    .item {
+      width:auto;
+    }
+    .content {
+      display:block;
+    }
+  }
+</style>
+
+<div class="container">
+  <h2 class="title">{title}</h2>
+  <div class="content">
+    {
+      content.map(o=>{
+        return (
+        
+        <div class="item">
+          <Image src={o.img} alt={o.title} layout="full-width" class="galleryImage" />
+          <h4>{o.title}</h4>
+          <p>{o.text}</p>
+        </div>
+        )})
+        
+      }
+    
+  </div>
+</div>
+
