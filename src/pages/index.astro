@@ -21,12 +21,16 @@ import { Image } from 'astro:assets';
 	
 	.content {
 		margin: 35px 5%;
-		min-height:70vh;
+		min-height:80vh;
+	}
+
+	.partial-content {
+		padding-left:5px;
 	}
 
 	@media only screen and (width<=600px){
 		.partial-content {
-			font-weight:normal;
+			padding-left:0;
 		}
 	}
 </style>
@@ -38,19 +42,28 @@ import { Image } from 'astro:assets';
 	<div class="content">
 
 	<TextImage altText="alt text" src={ImageOne}>
-		<h2>Store Description</h2>
-		<h4 class="partial-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h4>	
+		<h2>Welcome to GQ Cuts</h2>
+		<p class="partial-content">We are Dickson's premier barbershop since 2025. We deliver fresh, precise cuts–from classic styles to modern trends–with skill and attention to detail.<br>
+		Whether you're after a sharp fade, a clean crop, or something more unique, our barbers are here to bring your style to life.<br><br>
+
+		Kids are always welcome.<br><br>
+
+		Available by appointment or just drop-in and leave looking your best.<br>
+		
+
+		</p>	
 		<ContactUs href={CONTACT_NUMBER}>Call Now</ContactUs>
-	</TextImage>
+	<!-- </TextImage>
 	<Gallery title="About Us" content={[{title:"test",img:img1,text:"testing"},{title:'test2',img:img2,text:'this is a test'},{title:'more information',img:img3,text:"testing	"}]}/>
 	<TextImage src={ImageTwo}>
 		<h2>Owner Description</h2>
 		<h4 class="partial-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h4>
-	</TextImage>
+	</TextImage> -->
 	
-	<div style="text-align: center;">
+	<!-- <div style="text-align: center;">
 		<ContactUs href={CONTACT_NUMBER}>Call Now</ContactUs>
+	</div> -->
 	</div>
-	</div>
+</div>
 	<Footer/>
 </Layout>

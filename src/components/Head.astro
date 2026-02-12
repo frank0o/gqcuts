@@ -1,4 +1,5 @@
 ---
+import css from '../global.css'
 const {title,description} = Astro.props
 ---
 
@@ -6,8 +7,9 @@ const {title,description} = Astro.props
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" href="logotrans.png"/> 
-    <link rel="stylesheet" href="global.css"/>
+    <link rel="stylesheet" href={css}/>
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		<meta name="description" content={description}/>
+		
 	</head>
