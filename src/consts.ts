@@ -1,3 +1,4 @@
+export const SITE_TITLE = "GQ Cut"
 export const SITE_DESCRIPTION = `We are a walk in barbershop, open 7 days a week. 
 Providing quality customer service and haircuts from layers to fades! Located at 19 Challis at Dickson, Canberra 2602 .
 Prices start from $35.
